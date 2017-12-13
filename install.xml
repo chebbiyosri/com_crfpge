@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>COM_CRFPGE</name>
+	<creationDate>2017-11-31</creationDate>
+	<author>Yosri Chebbi</author>
+	<authorEmail>chebbi.yosri@gmail.com</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<version>1.1.0</version>
+	<description>COM_CRFPGE_DESCRIPTION</description>
+
+	<install>
+       <sql>
+    	<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+       </sql>
+	</install>
+        <uninstall>
+            <sql>
+    		<file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+            </sql>            
+        </uninstall>
+	<files folder="site">
+		<folder>assets</folder>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>languages</folder>
+		<folder>models</folder>
+		<folder>tables</folder>
+		<folder>views</folder>
+		<filename>index.html</filename>
+		<filename>crfpge.php</filename>
+		<filename>router.php</filename>
+	</files> 
+
+	<scriptfile>install.php</scriptfile>
+
+	<languages folder="site">
+		<language tag="fr-FR">languages/fr-FR/fr-FR.com_crfpge.ini</language>
+	</languages>
+
+	<administration>
+		<menu link="option=com_crfpge" img="components/com_crfpge/assets/images/crfpge_icon.png">COM_CRFPGE</menu>
+		<submenu>
+			<menu view="settings" img="components/com_crfpge/assets/images/settings_icon.png" 
+				alt="CRFPGE/Settings">COM_CRFPGE_SETTINGS</menu>
+		</submenu>
+
+		<files folder="admin">
+			<folder>controllers</folder>
+            <folder>helpers</folder>
+			<folder>languages</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+            <folder>sql</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+			<filename>crfpge.php</filename>
+			<filename>index.html</filename>
+		</files>  
+
+		<languages folder="admin">
+			<language tag="fr-FR">languages/fr-FR/fr-FR.com_crfpge.ini</language>
+			<language tag="fr-FR">languages/fr-FR/fr-FR.com_crfpge.sys.ini</language>
+		</languages>
+
+	</administration>
+	
+</extension>
