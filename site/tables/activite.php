@@ -8,6 +8,6 @@ class TableReview extends JTable
   * @param object Database connector object
   */
   function __construct( &$db ) {
-    parent::__construct('#__lendr_reviews', 'review_id', $db);
+    parent::__construct('#__crfpge_activite', 'activite_id', $db);
   }
 }

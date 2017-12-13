@@ -20,7 +20,7 @@ function addAction()
 			}
 		}
 	});
-
+	return false;
 }
 function addComite()
 {
@@ -33,19 +33,24 @@ function addComite()
 		url:'index.php?option=com_crfpge&controller=add&format=raw&tmpl=component',
 		type:'POST',
 		data:comiteInfo,
-		dataType:'JSON',
+		dataType:'json',
 		success:function(data)
 		{
-			if ( data.success ){
+			if (data.success == true){
 				console.log(data.html);
 				jQuery("#comite-list").append(data.html);
 				jQuery("#newComiteModal").modal('hide');
 			}else{
-            console.log("error");
+             alert(data.msg);
 			}
-		}
+		},
+		error: function (data) {
+                alert(data.msg);
+        },
+		
 	});
 
+	return false;
 }
 function addToWishlist(book_id)
 {

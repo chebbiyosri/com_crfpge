@@ -38,7 +38,7 @@ class CrfpgeHelpersView
 		return $view;
 	}
 
-	function getHtml($view, $layout, $item, $data)
+	static function getHtml($view, $layout, $item, $data)
 	{
 		$objectView = CrfpgeHelpersView::load($view, $layout, 'phtml');
   		$objectView->$item = $data;

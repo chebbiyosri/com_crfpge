@@ -9,8 +9,6 @@ class CrfpgeViewsComitePhtml extends JViewHTML
 
     function render()
     {
-    	
-    	
     	return parent::render();
  	}
 }

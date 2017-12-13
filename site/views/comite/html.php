@@ -15,15 +15,6 @@ class CrfpgeViewsComiteHtml extends JViewHtml
         $this->_actionListView = CrfpgeHelpersView::load('Action','list','phtml');
 		$this->_actionListView->actions = $this->comite->actions;
 		
-		/**
-		foreach($this->comite->actions as $action)
-        {
-	
-         echo $action->designation;
-	    }
-		**/
-		
-
       break;
       case "list":
       default:

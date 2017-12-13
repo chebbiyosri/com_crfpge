@@ -20,7 +20,7 @@ class CrfpgeControllersAdd extends JControllerBase
   		 $return['success'] = true;
   		 $return['msg'] = JText::_('COM_CRFPGE_SAVE_SUCCESS');
 
-     $return['html'] = LendrHelpersView::getHtml($view, $layout, $item, $row);
+     $return['html'] = CrfpgeHelpersView::getHtml($view, $layout, $item, $row);
   	 }else{
   		 $return['msg'] = JText::_('COM_CRFPGE_SAVE_FAILURE');
   	 }
