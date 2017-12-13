@@ -3,10 +3,10 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 //load classes
-JLoader::registerPrefix('Lendr', JPATH_COMPONENT_ADMINISTRATOR);
+JLoader::registerPrefix('Crfpge', JPATH_COMPONENT_ADMINISTRATOR);
 
 //Load plugins
-JPluginHelper::importPlugin('lendr');
+JPluginHelper::importPlugin('crfpge');
  
 //application
 $app = JFactory::getApplication();
@@ -15,7 +15,7 @@ $app = JFactory::getApplication();
 $controller = $app->input->get('controller','display');
 
 // Create the controller
-$classname  = 'LendrControllers'.ucwords($controller);
+$classname  = 'CrfpgeControllers'.ucwords($controller);
 $controller = new $classname();
  
 // Perform the Request task

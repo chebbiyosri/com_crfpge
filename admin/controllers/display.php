@@ -1,6 +1,6 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class LendrControllersDisplay extends JControllerBase
+class CrfpgeControllersDisplay extends JControllerBase
 {
   public function execute()
   {
@@ -21,8 +21,8 @@ class LendrControllersDisplay extends JControllerBase
     $paths = new SplPriorityQueue;
     $paths->insert(JPATH_COMPONENT . '/views/' . $viewName . '/tmpl', 'normal');
  
-    $viewClass  = 'LendrViews' . ucfirst($viewName) . ucfirst($viewFormat);
-    $modelClass = 'LendrModels' . ucfirst($viewName);
+    $viewClass  = 'CrfpgeViews' . ucfirst($viewName) . ucfirst($viewFormat);
+    $modelClass = 'CrfpgeModels' . ucfirst($viewName);
 
     $view = new $viewClass(new $modelClass, $paths);
 

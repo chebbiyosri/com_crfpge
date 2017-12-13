@@ -1,13 +1,13 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class LendrViewsStatisticsHtml extends JViewHtml
+class CrfpgeViewsStatisticsHtml extends JViewHtml
 {
   function render()
   {
     $app = JFactory::getApplication();
    
     //retrieve task list from model
-    $model = new LendrModelsStatistics();
+    $model = new CrfpgeModelsStatistics();
     $this->stats = $model->getStats();
 
     $this->addToolbar();
@@ -23,16 +23,16 @@ class LendrViewsStatisticsHtml extends JViewHtml
      */
     protected function addToolbar()
     {
-        $canDo  = LendrHelpersLendr::getActions();
+        $canDo  = CrfpgeHelpersCrfpge::getActions();
 
         // Get the toolbar object instance
         $bar = JToolBar::getInstance('toolbar');
 
-        JToolbarHelper::title(JText::_('COM_LENDR_STATISTICS'));
+        JToolbarHelper::title(JText::_('COM_CRFPGE_STATISTICS'));
                
         if ($canDo->get('core.admin'))
         {
-            JToolbarHelper::preferences('com_lendr');
+            JToolbarHelper::preferences('com_crfpge');
         }
     }
 }

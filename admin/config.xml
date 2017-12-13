@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 	<fieldset name="component"
-		label="COM_LENDR_OPTIONS"
-		description="COM_LENDR_OPTIONS_DESC"
-	>
+		label="COM_CRFPGE_OPTIONS"
+		description="COM_CRFPGE_OPTIONS_DESC">
 
 		<field name="required_account" type="radio"
 			default="0"
 			class="btn-group"
-			label="COM_LENDR_REQUIRED_ACCOUNT"
-			description="COM_LENDR_REQUIRED_ACCOUNT_DESC">
+			label="COM_CRFPGE_REQUIRED_ACCOUNT"
+			description="COM_CRFPGE_REQUIRED_ACCOUNT_DESC">
 			
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
@@ -18,8 +17,8 @@
 		<field name="new_reviews" type="radio"
 			default="1"
 			class="btn-group"
-			label="COM_LENDR_ALLOW_NEW_REVIEWS"
-			description="COM_LENDR_ALLOW_NEW_REVIEWS_DESC">
+			label="COM_CRFPGE_ALLOW_NEW_REVIEWS"
+			description="COM_CRFPGE_ALLOW_NEW_REVIEWS_DESC">
 			
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
@@ -28,8 +27,8 @@
 		<field name="new_wishlists" type="radio"
 			default="1"
 			class="btn-group"
-			label="COM_LENDR_ALLOW_NEW_WISHLISTS"
-			description="COM_LENDR_ALLOW_NEW_WISHLISTS_DESC">
+			label="COM_CRFPGE_ALLOW_NEW_WISHLISTS"
+			description="COM_CRFPGE_ALLOW_NEW_WISHLISTS_DESC">
 			
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
@@ -38,8 +37,8 @@
 		<field name="new_waitlists" type="radio"
 			default="1"
 			class="btn-group"
-			label="COM_LENDR_ALLOW_NEW_WAITLISTS"
-			description="COM_LENDR_ALLOW_NEW_WAITLISTS_DESC">
+			label="COM_CRFPGE_ALLOW_NEW_WAITLISTS"
+			description="COM_CRFPGE_ALLOW_NEW_WAITLISTS_DESC">
 			
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
@@ -53,7 +52,7 @@
 	>
 
 		<field name="rules" type="rules"
-			component="com_lendr"
+			component="COM_CRFPGE"
 			filter="rules"
 			validate="rules"
 			label="JCONFIG_PERMISSIONS_LABEL"

@@ -1,70 +1,71 @@
 <div class="row-fluid">
 <div class="span4 thumbnail">
 <h3>
-	<span class="label label-info pull-right"><?php echo $this->stats['total_books']; ?></span>
-	<?php echo JText::_('COM_LENDR_STATISTICS_TOTAL_BOOKS'); ?>
+	<span class="label label-info pull-right"><?php echo $this->stats['total_comites']; ?></span>
+	<?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_COMITES'); ?>
 </h3>
 <div class="progress progress-success">
-  <div class="bar" style="width: <?php echo $this->stats['total_books'] > 100 ? $this->stats['total_books'] / 100 : $this->stats['total_books']; ?>%"></div>
+  <div class="bar" style="width: <?php echo $this->stats['total_comites'] > 100 ? $this->stats['total_comites'] / 100 : $this->stats['total_comites']; ?>%"></div>
 </div>
-<p><?php echo JText::_('COM_LENDR_STATISTICS_TOTAL_BOOKS_DESC'); ?></p>
+<p><?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_COMITES_DESC'); ?></p>
+</div>
+<div class="span4 thumbnail">
+<h3>
+	<span class="label label-info pull-right"><?php echo $this->stats['total_actions']; ?></span>
+	<?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_ACTIONS'); ?>
+</h3>
+<div class="progress progress-success">
+  <div class="bar" style="width: <?php echo $this->stats['total_actions'] > 100 ? $this->stats['total_actions'] / 100 : $this->stats['total_actions']; ?>%"></div>
+</div>
+<p><?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_ACTIONS_DESC'); ?></p>
 </div>
 
 <div class="span4 thumbnail">
 <h3>
-	<span class="label label-info pull-right"><?php echo $this->stats['total_reviews']; ?></span>
-	<?php echo JText::_('COM_LENDR_STATISTICS_TOTAL_REVIEWS'); ?>
+	<span class="label label-info pull-right"><?php echo $this->stats['total_activites']; ?></span>
+	<?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_ACTIVITES'); ?>
 </h3>
 <div class="progress progress-success">
-  <div class="bar" style="width: <?php echo $this->stats['total_reviews'] > 100 ? $this->stats['total_reviews'] / 100 : $this->stats['total_reviews']; ?>%"></div>
+  <div class="bar" style="width: <?php echo $this->stats['total_activites'] > 100 ? $this->stats['total_activites'] / 100 : $this->stats['total_activites']; ?>%"></div>
 </div>
-<p><?php echo JText::_('COM_LENDR_STATISTICS_TOTAL_REVIEWS_DESC'); ?></p>
+<p><?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_ACTIVITES_DESC'); ?></p>
 </div>
 
-<div class="span4 thumbnail">
-<h3>
-	<span class="label label-info pull-right"><?php echo $this->stats['total_loaned']; ?></span>
-	<?php echo JText::_('COM_LENDR_STATISTICS_TOTAL_LENT'); ?>
-</h3>
-<div class="progress progress-success">
-  <div class="bar" style="width: <?php echo $this->stats['total_loaned'] > 100 ? $this->stats['total_loaned'] / 100 : $this->stats['total_loaned']; ?>%"></div>
+
 </div>
-<p><?php echo JText::_('COM_LENDR_STATISTICS_TOTAL_LENT_DESC'); ?></p>
-</div>
-</div>
-<br />
+<br>
+
 <div class="row-fluid">
 <div class="span4 thumbnail">
 <h3>
-	<span class="label label-info pull-right"><?php echo $this->stats['avg_wishlist']; ?></span>
-	<?php echo JText::_('COM_LENDR_STATISTICS_AVG_WISHLIST'); ?>
+	<span class="label label-info pull-right"><?php echo $this->stats['total_institutions']; ?></span>
+	<?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_INSTITUTIONS'); ?>
 </h3>
-<div class="progress progress-info">
-  <div class="bar" style="width: <?php echo $this->stats['avg_wishlist'] > 100 ? $this->stats['avg_wishlist'] / 100 : $this->stats['avg_wishlist']; ?>%"></div>
+<div class="progress progress-success">
+  <div class="bar" style="width: <?php echo $this->stats['total_institutions'] > 100 ? $this->stats['total_institutions'] / 100 : $this->stats['total_institutions']; ?>%"></div>
 </div>
-<p><?php echo JText::_('COM_LENDR_STATISTICS_AVG_WISHLIST_DESC'); ?></p>
+<p><?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_INSTITUTIONS_DESC'); ?></p>
+</div>
+<div class="span4 thumbnail">
+<h3>
+	<span class="label label-info pull-right"><?php echo $this->stats['total_membres']; ?></span>
+	<?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_RESPONSABLES'); ?>
+</h3>
+<div class="progress progress-success">
+  <div class="bar" style="width: <?php echo $this->stats['total_membres'] > 100 ? $this->stats['total_membres'] / 100 : $this->stats['total_membres']; ?>%"></div>
+</div>
+<p><?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_RESPONSABLES_DESC'); ?></p>
 </div>
 
 <div class="span4 thumbnail">
 <h3>
-	<span class="label label-info pull-right"><?php echo $this->stats['avg_library']; ?></span>
-	<?php echo JText::_('COM_LENDR_STATISTICS_AVG_LIBRARY'); ?>
+	<span class="label label-info pull-right"><?php echo $this->stats['total_documents']; ?></span>
+	<?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_DOCUMENTS'); ?>
 </h3>
-<div class="progress progress-info">
-  <div class="bar" style="width: <?php echo $this->stats['avg_library'] > 100 ? $this->stats['avg_library'] / 100 : $this->stats['avg_library']; ?>%"></div>
+<div class="progress progress-success">
+  <div class="bar" style="width: <?php echo $this->stats['total_documents'] > 100 ? $this->stats['total_documents'] / 100 : $this->stats['total_documents']; ?>%"></div>
 </div>
-<p><?php echo JText::_('COM_LENDR_STATISTICS_AVG_LIBRARY_DESC'); ?></p>
-</div>
-
-<div class="span4 thumbnail">
-<h3>
-	<span class="label label-info pull-right"><?php echo $this->stats['avg_waitlist']; ?></span>
-	<?php echo JText::_('COM_LENDR_STATISTICS_AVG_WAITLIST'); ?>
-</h3>
-<div class="progress progress-info">
-  <div class="bar" style="width: <?php echo $this->stats['avg_waitlist'] > 100 ? $this->stats['avg_waitlist'] / 100 : $this->stats['avg_waitlist']; ?>%"></div>
-</div>
-<p><?php echo JText::_('COM_LENDR_STATISTICS_AVG_WAITLIST_DESC'); ?></p>
+<p><?php echo JText::_('COM_CRFPGE_STATISTICS_TOTAL_DOCUMENTS_DESC'); ?></p>
 </div>
 
 
