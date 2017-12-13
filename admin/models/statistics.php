@@ -28,7 +28,7 @@ class CrfpgeModelsStatistics extends JModelBase
     //Retrieve Total Activités
     $query = $db->getQuery(true);
     $query->select('COUNT(*)')
-          ->from('#__crfpge_activites')
+          ->from('#__crfpge_activite')
           ->where('state_code = 1');
     $db->setQuery($query);
     $stats['total_activites'] = $db->loadResult();
@@ -36,21 +36,21 @@ class CrfpgeModelsStatistics extends JModelBase
 	//Retrieve Total Documents
     $query = $db->getQuery(true);
     $query->select('COUNT(*)')
-          ->from('#__crfpge_institution')
+          ->from('#__crfpge_institution');
     $db->setQuery($query);
     $stats['total_institutions'] = $db->loadResult();
 	
     //Retrieve Total Responsables
     $query = $db->getQuery(true);
     $query->select('COUNT(*)')
-          ->from('#__crfpge_membre')
+          ->from('#__crfpge_membre');
     $db->setQuery($query);
     $stats['total_membres'] = $db->loadResult();
 	
 	//Retrieve Total Documents
     $query = $db->getQuery(true);
     $query->select('COUNT(*)')
-          ->from('#__crfpge_document')
+          ->from('#__crfpge_document');
     $db->setQuery($query);
     $stats['total_documents'] = $db->loadResult();
 	
