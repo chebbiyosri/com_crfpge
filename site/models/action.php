@@ -28,7 +28,8 @@ class CrfpgeModelsAction extends CrfpgeModelsDefault
     $app = JFactory::getApplication();
     $this->_action_id = $app->input->get('action_id', null);
     
-    parent::__construct();       
+    parent::__construct();   
+	$this->_comite_id=(int)parent::getComite();    
   }
  
   /**
@@ -92,7 +93,7 @@ class CrfpgeModelsAction extends CrfpgeModelsDefault
       $query->where('c.created_by = ' . (int) $this->_user_id);
     }
 
-    if(is_numeric($this->_comite_id)) 
+   if(is_numeric($this->_comite_id) && $this->_comite_id>0) 
     {
       $query->where('c.comite_id = ' . (int) $this->_comite_id);
     }
