@@ -15,18 +15,19 @@ class CrfpgeControllersAdd extends JControllerBase
     $modelName  = 'CrfpgeModels'.ucwords($modelName);
 
   	 $model = new $modelName();
-   	if ( $row = $model->store() )
+	 
+   	if ($row = $model->store() )
   	 {
   		 $return['success'] = true;
   		 $return['msg'] = JText::_('COM_CRFPGE_SAVE_SUCCESS');
-
-     $return['html'] = CrfpgeHelpersView::getHtml($view, $layout, $item, $row);
+		 $return['html'] = CrfpgeHelpersView::getHtml($view, $layout, $item, $row);
   	 }else{
-  		 $return['msg'] = JText::_('COM_CRFPGE_SAVE_FAILURE');
-  	 }
-    
-  	echo json_encode($return);
 
+  		 $return['msg'] = JText::_('COM_CRFPGE_SAVE_FAILURE');
+		 
+  	 }
+	 
+  	echo json_encode($return);
   }
 
 }

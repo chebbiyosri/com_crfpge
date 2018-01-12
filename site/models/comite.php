@@ -9,6 +9,9 @@ class CrfpgeModelsComite extends CrfpgeModelsDefault
   var $_comite_id  = null;
   var $_user_id     = null;
   var $_state_code   = 1;
+  
+  var $_pagination  = null;
+  var $_total       = null;
 
   function __construct()
   {
@@ -30,24 +33,7 @@ class CrfpgeModelsComite extends CrfpgeModelsDefault
 
     return $comite;
   }
-/**
-  function listItems()
-  {
-    $actionModel = new CrfpgeModelsAction();
-    $comites = parent::listItems();
 
-    $n = count($comites);
-
-    for($i=0;$i<$n;$i++)
-    {
-      $comite = $comites[$i];
-      $actionModel->_comite_id = $comite->comite_id;
-      $comite->actions = $actionModel->listItems();
-    }
-
-  return $comites;
-  }
-**/
   protected function _buildQuery()
   {
     $db = JFactory::getDBO();
@@ -64,7 +50,6 @@ class CrfpgeModelsComite extends CrfpgeModelsDefault
     JFactory::getApplication()->enqueueMessage($query);
 
     return $query;
-	
 
   }
 
@@ -85,6 +70,22 @@ class CrfpgeModelsComite extends CrfpgeModelsDefault
     $query->where('c.state_code = '. (int) $this->_state_code);
 
     return $query;
+  }
+
+  public function delete($id = null)
+  {
+    $app  = JFactory::getApplication();
+    $id   = $id ? $id : $app->input->get('comite_id');
+    
+    $comite = JTable::getInstance('Comite','Table');
+    $comite->load($id);
+
+    if($comite->delete()) 
+    {
+      return true;
+    } else {
+      return false;
+    }
   }
    
 }

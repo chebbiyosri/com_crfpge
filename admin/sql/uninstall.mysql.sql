@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS ws_crfpge_action_document;
 DROP TABLE IF EXISTS ws_crfpge_membre;
 DROP TABLE IF EXISTS ws_crfpge_action;
 DROP TABLE IF EXISTS ws_crfpge_activite;

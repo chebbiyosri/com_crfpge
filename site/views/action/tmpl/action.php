@@ -1,4 +1,4 @@
-<a href="<?php echo JRoute::_('index.php?option=com_crfpge&view=action&layout=list'); ?>" class="btn pull-right"><i class="icon icon-chevron-left"></i>
+<a href="<?php echo JRoute::_('index.php?option=com_crfpge&view=comite&layout=comite&comite_id='.$this->action->comite_id); ?>" class="btn pull-right"><i class="icon icon-chevron-left"></i>
  <?php echo JText::_('COM_CRFPGE_BACK'); ?></a>
 <h2 class="page-header"><?php echo $this->action->designation; ?></h2>
 <div class="row-fluid">
@@ -19,23 +19,36 @@
 <br />
 <div class="row-fluid">
 <div class="tabbable">
-  <ul class="nav nav-tabs">
+
+<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a href="#activitesTab" data-toggle="tab"><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></a></li>
-    <li><a href="#list1Tab" data-toggle="tab">Tab1</a></li>
-    <li><a href="#list2Tab" data-toggle="tab">Tab2</a></li>
-  </ul>
-  <div class="tab-content">
+    <li><a href="#membresTab" data-toggle="tab">Membres</a></li>
+	<li><a href="#documentsTab" data-toggle="tab">Documents</a></li>
+</ul>
+
+<div class="tab-content">
     <div class="tab-pane active" id="activitesTab">
         <a href="#newActiviteModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
 		<?php echo JText::_('COM_CRFPGE_ADD_ACTIVITE'); ?>
 		</a>
-      <h2><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></h2>
-      <?php echo $this->_activiteListView->render(); ?>
+        <h2><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></h2>
+        <?php echo $this->_activiteListView->render(); ?>
     </div>
-    <div class="tab-pane" id="list1Tab">
+
+    <div class="tab-pane" id="membresTab">
+	 <a href="#newMembreModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
+		Ajouter un membre
+		</a>
+        <h2>Liste des membres</h2>
+        <?php echo $this->_membreListView->render(); ?>
     </div>
-    <div class="tab-pane" id="list2Tab">
+	<div class="tab-pane" id="documentsTab">
+	 <a href="#newDocumentModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
+		Ajouter un document
+		</a>
+        <h2>Liste des documents</h2>
+        <?php echo $this->_documentListView->render(); ?>
     </div>
-  </div>
+</div>
 </div>
 </div>

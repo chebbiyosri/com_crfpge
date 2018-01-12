@@ -27,6 +27,7 @@ create table IF NOT EXISTS ws_crfpge_institution
 create table IF NOT EXISTS ws_crfpge_document
 (
    document_id          INTEGER UNSIGNED AUTO_INCREMENT,
+   action_id            INTEGER UNSIGNED not null,
    titre                varchar(300) not null,
    nom_fichier          varchar(300) not null,
    description          text,
@@ -81,17 +82,11 @@ create table IF NOT EXISTS ws_crfpge_membre
    fonction        varchar(255),
    email           varchar(255),
    tel             varchar(20),
+   state_code           TINYINT UNSIGNED  not null,
+   created              datetime not null,
+   modified             TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   created_by           INTEGER  not null,
+   modified_by          INTEGER ,
    primary key (membre_id)
-);
-create table IF NOT EXISTS ws_crfpge_action_document
-(
-   action_document_id   INTEGER UNSIGNED AUTO_INCREMENT,
-   action_id            INTEGER UNSIGNED not null,
-   titre                varchar(300) not null,
-   nom_fichier          varchar(300) not null,
-   description          text,
-   tags                 varchar(255),
-   confidentiel         enum('public','interne','confidentiel') not null,
-   primary key (action_document_id)
 );
 

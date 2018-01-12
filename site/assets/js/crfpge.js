@@ -1,27 +1,3 @@
-function addAction()
-{
-	var actionInfo = {};
-	jQuery("#actionForm :input").each(function(idx,ele){
-		actionInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
-	});
-
-	jQuery.ajax({
-		url:'index.php?option=com_crfpge&controller=add&format=raw&tmpl=component',
-		type:'POST',
-		data:actionInfo,
-		dataType:'JSON',
-		success:function(data)
-		{
-			if ( data.success ){
-				jQuery("#action-list").append(data.html);
-				jQuery("#newActionModal").modal('hide');
-			}else{
-
-			}
-		}
-	});
-	return false;
-}
 function addComite()
 {
 	var comiteInfo = {};
@@ -37,67 +13,40 @@ function addComite()
 		success:function(data)
 		{
 			if (data.success == true){
-				console.log(data.html);
-				jQuery("#comite-list").append(data.html);
+				//console.log(data.html);
+				//jQuery("#comite-list").append(data.html);
 				jQuery("#newComiteModal").modal('hide');
+				location.reload();
 			}else{
-             alert(data.msg);
+            console.log("error");
 			}
 		},
 		error: function (data) {
                 alert(data.msg);
-        },
+            },
 		
 	});
 
 	return false;
 }
-function addToWishlist(book_id)
+function addAction()
 {
-	jQuery.ajax({
-	url:'index.php?option=com_lendr&controller=wish&format=raw&tmpl=component',
-	type:'POST',
-	data:'&book_id='+book_id,
-	dataType:'JSON',
-	success:function(data)
-	{
-		if ( data.success ){
-			console.log(data.html);
-			jQuery("#messageModal").modal('show');
-			jQuery("#message").html(data.html);
-		}
-	}
-	});
-}
-
-function loadLendModal(book_id, borrower_id, borrower, waitlist_id)
-{
-	jQuery("#lendBookModal").modal('show');
-	jQuery('#borrower_name').html(borrower);
-	jQuery("#book_id").val(book_id);
-	jQuery("#borrower_id").val(borrower_id);
-	jQuery("#waitlist_id").val(waitlist_id);
-}
-
-//add a review
-function addReview()
-{
-	var reviewInfo = {};
-	jQuery("#reviewForm :input").each(function(idx,ele){
-		reviewInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	var actionInfo = {};
+	jQuery("#actionForm :input").each(function(idx,ele){
+		actionInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
 	});
 
 	jQuery.ajax({
-		url:'index.php?option=com_lendr&controller=add&format=raw&tmpl=component',
+		url:'index.php?option=com_crfpge&controller=add&format=raw&tmpl=component',
 		type:'POST',
-		data:reviewInfo,
+		data:actionInfo,
 		dataType:'JSON',
 		success:function(data)
 		{
 			if ( data.success ){
-				console.log(data.html);
-				jQuery("#review-list").append(data.html);
-				jQuery("#newReviewModal").modal('hide');
+				//jQuery("#action-list").append(data.html);
+				jQuery("#newActionModal").modal('hide');
+				location.reload();
 			}else{
 
 			}
@@ -105,127 +54,417 @@ function addReview()
 	});
 
 }
-
-function borrowBookModal(book_id)
+function addActivite()
 {
-	jQuery("#borrowBookModal").modal('show');
-	var html = jQuery("#book-row-"+book_id).html();
-	jQuery("#book-modal-info").html(html);
-	jQuery("#book-id").val(book_id);
-}
-
-function lendBook()
-{
-	var lendForm = {};
-	jQuery("#lendForm :input").each(function(idx,ele){
-		lendForm[jQuery(ele).attr('name')] = jQuery(ele).val();
+	var actionInfo = {};
+	jQuery("#activiteForm :input").each(function(idx,ele){
+		actionInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
 	});
-	
+
 	jQuery.ajax({
-		url:'index.php?option=com_lendr&controller=lend&format=raw&tmpl=component',
+		url:'index.php?option=com_crfpge&controller=add&format=raw&tmpl=component',
 		type:'POST',
-		data:lendForm,
+		data:actionInfo,
 		dataType:'JSON',
 		success:function(data)
 		{
-			if ( data.success )
-			{
-				jQuery("#lendBookModal").modal('hide');
+			if ( data.success ){
+				//jQuery("#activite-list").append(data.html);
+				jQuery("#newActiviteModal").modal('hide');
+				location.reload();
+			}else{
+
 			}
 		}
 	});
-}
 
-function borrowBook()
+}
+function addInstitution()
 {
-	var requestInfo = {};
-	jQuery("#borrowForm :input").each(function(idx,ele){
-		requestInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	var institutionInfo = {};
+	jQuery("#institutionForm :input").each(function(idx,ele){
+		institutionInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
 	});
-	
+
 	jQuery.ajax({
-		url:'index.php?option=com_lendr&controller=request&format=raw&tmpl=component',
+		url:'index.php?option=com_crfpge&controller=add&format=raw&tmpl=component',
 		type:'POST',
-		data:requestInfo,
+		data:institutionInfo,
 		dataType:'JSON',
 		success:function(data)
 		{
-			if ( data.success )
-			{
-				jQuery("#borrowBookModal").modal('hide');
-			} else {
-
+			alert(data.msg);
+			if ( data.success ){
+				jQuery("#newInstitutionModal").modal('hide');
+				location.reload();
 			}
-		}
+		},
+        error: function(data) {
+        alert(data);
+        }
 	});
-}
 
-function lendBookModal(book_id,borrower)
-{
-	alert(borrower);
-	jQuery("#lendBookModal").modal('show');
-	jQuery("#bookid").val(book_id);
-	jQuery("#borrower_name").html(borrower);	
 }
-
-function returnBookModal(book_id)
+function addMembre()
 {
-	jQuery("#returnBookModal").modal('show');
-	jQuery("#book_id").val(book_id);
-}
-
-function returnBook()
-{
-	var postInfo = {};
-	jQuery("#returnForm :input").each(function(idx,ele){
-		postInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	var membreInfo = {};
+	jQuery("#membreForm :input").each(function(idx,ele){
+		membreInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
 	});
 
 	jQuery.ajax({
-		url:'index.php?option=com_lendr&controller=lend&format=raw&tmpl=component',
+		url:'index.php?option=com_crfpge&controller=add&format=raw&tmpl=component',
 		type:'POST',
-		data: postInfo,
-		dataType: 'JSON',
+		data:membreInfo,
+		dataType:'JSON',
 		success:function(data)
 		{
-			if(data.success)
-			{
-				jQuery("#returnBookModal").modal('hide');
-			} else {
-
+			alert(data.msg);
+			if ( data.success ){
+				jQuery("#newMembreModal").modal('hide');
+				location.reload();
 			}
+		},
+        error: function(data) {
+        alert(data);
+        }
+	});
+
+}
+function editComite()
+{
+	var comiteInfo = {};
+	jQuery("#comiteEditForm :input").each(function(idx,ele){
+		comiteInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	});
+	
+	jQuery.ajax({
+	url:'index.php?option=com_crfpge&controller=edit&format=raw&tmpl=component',
+	data:comiteInfo,
+	type:'POST',
+	dataType:'JSON',
+	success:function(data)
+	{
+		alert(data.msg);
+		if (data.success ){
+			
+			jQuery("#editComiteModal").modal('hide');
+			location.reload();
 		}
+	},
+        error: function(data) {
+        alert(data);
+        }
 	});
 }
 
-function cancelRequest(waitlist_id) 
+
+function loadComiteEditModal(data)
+{
+	
+	jQuery("#editComiteModal").modal('show');
+
+	jQuery("#comite_id").val(data.comite_id);
+	jQuery("#created_by").val(data.created_by);
+	jQuery("#created").val(data.created);
+	jQuery("#state_code").val(data.state_code);
+	jQuery("#designation").val(data.designation);
+	jQuery("#description").val(data.description);
+}
+function editAction()
+{
+	var actionInfo = {};
+	jQuery("#actionEditForm :input").each(function(idx,ele){
+		actionInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	});
+	
+	jQuery.ajax({
+	url:'index.php?option=com_crfpge&controller=edit&format=raw&tmpl=component',
+	data:actionInfo,
+	type:'POST',
+	dataType:'JSON',
+	success:function(data)
+	{
+		alert(data.msg);
+		if (data.success ){
+			
+			jQuery("#editActionModal").modal('hide');
+			location.reload();
+		}
+	},
+        error: function(data) {
+        alert(data);
+        }
+	});
+}
+function loadActionEditModal(data)
+{
+	var action = JSON.parse(data);
+	jQuery("#editActionModal").modal('show');
+
+	jQuery("#action_id").val(action.action_id);
+	jQuery("#comite_id").val(action.comite_id);
+	jQuery("#created_by").val(action.created_by);
+	jQuery("#created").val(action.created);
+	jQuery("#state_code").val(action.state_code);
+	jQuery("#designation").val(action.designation);
+	jQuery("#description").val(action.description);
+	jQuery("#date_debut").val(action.date_debut);
+	jQuery("#date_fin").val(action.date_fin);
+	jQuery("#use_alerte").val(action.date_fin);
+	jQuery("#interval_alerte").val(action.interval_alerte);
+	jQuery("#date_alerte").val(action.date_alerte);
+}
+
+function editActivite()
+{
+	var activiteInfo = {};
+	jQuery("#activiteEditForm :input").each(function(idx,ele){
+		activiteInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	});
+	
+	jQuery.ajax({
+	url:'index.php?option=com_crfpge&controller=edit&format=raw&tmpl=component',
+	data:activiteInfo,
+	type:'POST',
+	dataType:'JSON',
+	success:function(data)
+	{
+		alert(data.msg);
+		if (data.success ){
+			
+			jQuery("#editActiviteModal").modal('hide');
+			location.reload();
+		}
+	},
+        error: function(data) {
+        alert(data);
+        }
+	});
+}
+function loadActiviteEditModal(data)
+{
+	var activite = JSON.parse(data);
+	jQuery("#editActiviteModal").modal('show');
+	
+    jQuery("#activite_id").val(activite.activite_id);
+	jQuery("#action_id").val(activite.action_id);
+	jQuery("#created_by").val(activite.created_by);
+	jQuery("#created").val(activite.created);
+	jQuery("#state_code").val(activite.state_code);
+	jQuery("#designation").val(activite.designation);
+	jQuery("#description").val(activite.description);
+}
+
+
+
+
+function deleteComite(comite_id) 
 {
 	jQuery.ajax({
-		url:'index.php?option=com_lendr&controller=delete&format=raw&tmpl=component',
+		url:'index.php?option=com_crfpge&controller=delete&format=raw&tmpl=component&model=Comite',
 		type:'POST',
-		data: 'waitlist_id='+waitlist_id,
+		data: 'comite_id='+comite_id,
 		dataType: 'JSON',
 		success:function(data)
 		{
 			alert(data.msg);
-		}
+			if(data.success)
+			{
+				location.reload();
+				//jQuery("tr#comiteRow"+comite_id).hide();
+			}
+		},
+        error: function(data) {
+        alert(data);
+        }
+    
 	});
+	return false;
 }
 
-function deleteBook(book_id,type) 
+function deleteAction(action_id) 
 {
 	jQuery.ajax({
-		url:'index.php?option=com_lendr&controller=delete&format=raw&tmpl=component',
+		url:'index.php?option=com_crfpge&controller=delete&format=raw&tmpl=component&model=Action',
 		type:'POST',
-		data: 'book_id='+book_id+'&type='+type,
+		data: 'action_id='+action_id,
 		dataType: 'JSON',
 		success:function(data)
 		{
 			alert(data.msg);
 			if(data.success)
 			{
-				jQuery("tr#bookRow"+book_id).hide();
+				location.reload();
+				//jQuery("tr#actionRow"+action_id).hide();
 			}
-		}
+		},
+        error: function(data) {
+        alert(data);
+        }
 	});
+	return false;
+}
+
+function deleteActivite(activite_id) 
+{
+	jQuery.ajax({
+		url:'index.php?option=com_crfpge&controller=delete&format=raw&tmpl=component&model=Activite',
+		type:'POST',
+		data: 'activite_id='+activite_id,
+		dataType: 'JSON',
+		success:function(data)
+		{
+			alert(data.msg);
+			if(data.success)
+			{
+				location.reload();
+				//jQuery("tr#activiteRow"+activite_id).hide();
+			}
+		},
+        error: function(data) {
+        alert(data);
+        }
+	});
+	return false;
+}
+
+
+
+
+
+function editInstitution()
+{
+	var institutionInfo = {};
+	jQuery("#institutionEditForm :input").each(function(idx,ele){
+		institutionInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	});
+	
+	jQuery.ajax({
+	url:'index.php?option=com_crfpge&controller=edit&format=raw&tmpl=component',
+	data:institutionInfo,
+	type:'POST',
+	dataType:'JSON',
+	success:function(data)
+	{
+		alert(data.msg);
+		if (data.success ){
+			
+			jQuery("#editInstitutionModal").modal('hide');
+			location.reload();
+		}
+	},
+        error: function(data) {
+        alert(data);
+        }
+	});
+}
+function loadInstitutionEditModal(data)
+{
+	if(data){
+	jQuery("#editInstitutionModal").modal('show');
+
+	jQuery("#institution_id").val(data.institution_id);
+	jQuery("#designation").val(data.designation);
+	jQuery("#created_by").val(data.created_by);
+	jQuery("#created").val(data.created);
+	jQuery("#state_code").val(data.state_code);
+
+	}
+	else{
+		return false;
+	}
+	
+}
+function deleteInstitution(institution_id) 
+{
+	jQuery.ajax({
+		url:'index.php?option=com_crfpge&controller=delete&format=raw&tmpl=component&model=institution',
+		type:'POST',
+		data: 'institution_id='+institution_id,
+		dataType: 'JSON',
+		success:function(data)
+		{
+			alert(data.msg);
+			if(data.success)
+			{
+				location.reload();
+			}
+		},
+        error: function(data) {
+        alert(data);
+        }
+	});
+	return false;
+}
+
+function editMembre()
+{
+	var membreInfo = {};
+	jQuery("#membreEditForm :input").each(function(idx,ele){
+		membreInfo[jQuery(ele).attr('name')] = jQuery(ele).val();
+	});
+	
+	jQuery.ajax({
+	url:'index.php?option=com_crfpge&controller=edit&format=raw&tmpl=component',
+	data:membreInfo,
+	type:'POST',
+	dataType:'JSON',
+	success:function(data)
+	{
+		alert(data.msg);
+		if (data.success ){
+			
+			jQuery("#editMembreModal").modal('hide');
+			location.reload();
+		}
+	},
+        error: function(data) {
+        alert(data);
+        }
+	});
+}
+function loadMembreEditModal(data)
+{
+	if(data){
+	jQuery("#editMembreModal").modal('show');
+    jQuery("#membre_id").val(data.membre_id);
+	jQuery("#action_id").val(data.action_id);
+	jQuery("#institution_id").val(data.institution_id);
+	
+	jQuery("#representant").val(data.representant);
+	jQuery("#fonction").val(data.fonction);
+	jQuery("#email").val(data.email);
+	jQuery("#tel").val(data.tel);
+	
+	jQuery("#created_by").val(data.created_by);
+	jQuery("#created").val(data.created);
+	jQuery("#state_code").val(data.state_code);
+	jQuery("#designation").val(data.designation);
+	}
+	else{
+		return false;
+	}
+}
+
+function deleteMembre(membre_id) 
+{
+	jQuery.ajax({
+		url:'index.php?option=com_crfpge&controller=delete&format=raw&tmpl=component&model=membre',
+		type:'POST',
+		data: 'membre_id='+membre_id,
+		dataType: 'JSON',
+		success:function(data)
+		{
+			alert(data.msg);
+			if(data.success)
+			{
+				location.reload();
+			}
+		},
+        error: function(data) {
+        alert(data);
+        }
+	});
+	return false;
 }

@@ -1,6 +1,6 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class TableReview extends JTable
+class TableActivite extends JTable
 {                      
   /**
   * Constructor

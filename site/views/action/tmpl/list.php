@@ -15,4 +15,14 @@
 	</tbody>
 </table>
 
+
 <?php echo $this->_addActionView->render(); ?>
+<script>
+function loadEditModal(id){
+	var jsonArray = <?php echo json_encode($this->actions); ?>;
+	if(id){
+	var result = jQuery.grep(jsonArray, function(e){ return e.action_id == parseInt(id); });
+    loadActionEditModal(result[0]);
+	}
+}
+</script>

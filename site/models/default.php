@@ -192,7 +192,7 @@ class CrfpgeModelsDefault extends JModelBase
     {
       $this->_pagination = new JPagination( $this->getTotal(), $this->getState($this->_view.'_limitstart'), $this->getState($this->_view.'_limit'),null,JRoute::_('index.php?view='.$this->_view.'&layout='.$this->_layout));
     }
-    
+     
     return $this->_pagination;
   }
 }

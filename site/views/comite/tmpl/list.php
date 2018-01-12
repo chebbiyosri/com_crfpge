@@ -17,5 +17,17 @@
 		} ?>
 	</tbody>
 </table>
-
+<?php echo $this->pagination ?>
 <?php echo $this->_addComiteView->render(); ?>
+<?php echo $this->_editComiteView->render(); ?>
+
+<script>
+function loadEditModal(id){
+	var jsonArray = '<?php echo json_encode($this->comites); ?>';
+	var myArray = JSON.parse(jsonArray);
+	if(id){
+	var result = jQuery.grep(myArray, function(e){ return e.comite_id == parseInt(id); });
+    loadComiteEditModal(result[0]);
+	}
+}
+</script>
