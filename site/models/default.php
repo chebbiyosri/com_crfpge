@@ -74,6 +74,35 @@ class CrfpgeModelsDefault extends JModelBase
   {
     return isset($this->$property) ? $this->$property : $default;
   }
+  
+   public function getComite()
+  {
+    $db = JFactory::getDBO();
+    $query = $db->getQuery(TRUE);
+
+    $query->select('comite_id');
+    $query->from('#__view_users');
+    $user_id=0;
+    $user = JFactory::getUser();
+    if (!$user->get('guest'))
+    {
+        $user_id=$user->id;
+    }
+        
+    $query->where('id='. (int)$user_id);
+    JFactory::getApplication()->enqueueMessage($query);
+
+    
+    $db->setQuery($query);
+
+    $item = $db->loadResult();
+    if ($item == NULL) {
+            return 0;
+        } else {
+            return (int) ($item);
+        }
+    }
+
 
   /**
   * Build a query, where clause and return an object

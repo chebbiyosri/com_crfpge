@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS ws_crfpge_activite;
 DROP TABLE IF EXISTS ws_crfpge_document;
 DROP TABLE IF EXISTS ws_crfpge_institution;
 DROP TABLE IF EXISTS ws_crfpge_comite;
+DROP VIEW IF EXISTS  ws_crfpge_view_users;
 
 
 

@@ -90,3 +90,8 @@ create table IF NOT EXISTS ws_crfpge_membre
    primary key (membre_id)
 );
 
+
+CREATE VIEW ws_crfpge_view_users  AS  
+select `u`.`id` AS `id`,`u`.`name` AS `name`,`u`.`username` AS `username`,`u`.`email` AS `email`,`u`.`password` AS `password`,`u`.`block` AS `block`,`u`.`sendEmail` AS `sendEmail`,`u`.`registerDate` AS `registerDate`,`u`.`lastvisitDate` AS `lastvisitDate`,`u`.`activation` AS `activation`,`u`.`params` AS `params`,`u`.`lastResetTime` AS `lastResetTime`,`u`.`resetCount` AS `resetCount`,`u`.`otpKey` AS `otpKey`,`u`.`otep` AS `otep`,`u`.`requireReset` AS `requireReset`,`v`.`value` AS `comite_id` 
+from (`ws_users` `u` left join `ws_fields_values` `v` on((`v`.`item_id` = `u`.`id`))) ;
+
