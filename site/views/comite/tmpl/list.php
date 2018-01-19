@@ -22,6 +22,7 @@
 <?php echo $this->_editComiteView->render(); ?>
 
 <script>
+
 function loadEditModal(id){
 	var jsonArray = '<?php echo json_encode($this->comites); ?>';
 	var myArray = JSON.parse(jsonArray);
