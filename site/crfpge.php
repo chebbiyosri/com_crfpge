@@ -19,6 +19,8 @@ CrfpgeHelpersStyle::load();
 
 //application
 $app = JFactory::getApplication();
+$router = $app->getRouter();
+$router->setMode(0);
  
 // Require specific controller if requested
 $controller = $app->input->get('controller','default');
