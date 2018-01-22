@@ -32,10 +32,6 @@
       <h2><?php echo JText::_('COM_CRFPGE_ACTION_LIST'); ?></h2>
       <?php echo $this->_actionListView->render(); ?>
     </div>
-    <div class="tab-pane" id="wishlistTab">
-    </div>
-    <div class="tab-pane" id="waitlistTab">
-    </div>
   </div>
 </div>
 </div>
