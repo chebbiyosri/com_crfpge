@@ -11,7 +11,7 @@
       <dd><?php echo $this->comite->designation; ?></dd>
       <dt><?php echo JText::_('COM_CRFPGE_DESCRIPTION'); ?></dt>
       <dd><?php echo $this->comite->description?></dd>
-      <dt><?php echo JText::_('COM_LENDR_PROFILE_JOIN'); ?></dt>
+      <dt><?php echo JText::_('COM_CRFPGE_CREATED'); ?></dt>
       <dd><?php echo JHtml::_('date', $this->comite->created, JText::_('DATE_FORMAT_LC3')); ?></dd>
     </dl>
   </div>
@@ -21,12 +21,10 @@
 <div class="tabbable">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#actionsTab" data-toggle="tab"><?php echo JText::_('COM_CRFPGE_ACTION_LIST'); ?></a></li>
-    <li><a href="#wishlistTab" data-toggle="tab"><?php echo JText::_('COM_LENDR_WISHLIST'); ?></a></li>
-    <li><a href="#waitlistTab" data-toggle="tab"><?php echo JText::_('COM_LENDR_WAITLIST'); ?></a></li>
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="actionsTab">
-        <a href="#newActionModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
+        <a href="#newActionModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
 		<?php echo JText::_('COM_CRFPGE_ADD_ACTION'); ?>
 		</a>
       <h2><?php echo JText::_('COM_CRFPGE_ACTION_LIST'); ?></h2>
