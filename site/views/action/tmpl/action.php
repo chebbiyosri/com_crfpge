@@ -11,8 +11,12 @@
       <dd><?php echo $this->action->designation; ?></dd>
       <dt><?php echo JText::_('COM_CRFPGE_DESCRIPTION'); ?></dt>
       <dd><?php echo $this->action->description?></dd>
-      <dt><?php echo JText::_('COM_LENDR_PROFILE_JOIN'); ?></dt>
-      <dd><?php echo JHtml::_('date', $this->action->created, JText::_('DATE_FORMAT_LC3')); ?></dd>
+      <dt><?php echo JText::_('COM_CRFPGE_CREATED'); ?></dt>
+      <dd><?php echo JHtml::_('date', $this->action->created, JText::_('DATE_FORMAT_FILTER_DATETIME')); ?></dd>
+	  <dt><?php echo JText::_('COM_CRFPGE_DATE_DEBUT'); ?></dt>
+      <dd><?php echo JHtml::_('date', $this->action->date_debut, JText::_('DATE_FORMAT_LC4')); ?></dd>
+	  <dt><?php echo JText::_('COM_CRFPGE_DATE_FIN'); ?></dt>
+      <dd><?php echo JHtml::_('date', $this->action->date_fin, JText::_('DATE_FORMAT_LC4')); ?></dd>
     </dl>
   </div>
 </div>
