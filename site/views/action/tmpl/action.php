@@ -28,7 +28,7 @@
 
 <div class="tab-content">
     <div class="tab-pane active" id="activitesTab">
-        <a href="#newActiviteModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
+        <a href="#newActiviteModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
 		<?php echo JText::_('COM_CRFPGE_ADD_ACTIVITE'); ?>
 		</a>
         <h2><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></h2>
@@ -36,14 +36,14 @@
     </div>
 
     <div class="tab-pane" id="membresTab">
-	 <a href="#newMembreModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
+	 <a href="#newMembreModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
 		Ajouter un membre
 		</a>
         <h2>Liste des membres</h2>
         <?php echo $this->_membreListView->render(); ?>
     </div>
 	<div class="tab-pane" id="documentsTab">
-	 <a href="#newDocumentModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil-2"></i> 
+	 <a href="#newDocumentModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
 		Ajouter un document
 		</a>
         <h2>Liste des documents</h2>

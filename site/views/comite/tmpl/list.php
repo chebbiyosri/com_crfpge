@@ -1,5 +1,5 @@
 <a href="#newComiteModal" role="button" data-toggle="modal" class="btn pull-right">
-<i class="icon icon-pencil-2"></i> <?php echo JText::_('COM_CRFPGE_ADD_COMITE'); ?>
+<i class="icon icon-pencil"></i> <?php echo JText::_('COM_CRFPGE_ADD_COMITE'); ?>
 </a>
 <table cellpadding="0" cellspacing="0" width="100%" class="table table-striped">
 	<thead>
