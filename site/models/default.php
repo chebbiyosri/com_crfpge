@@ -90,7 +90,7 @@ class CrfpgeModelsDefault extends JModelBase
     }
         
     $query->where('id='. (int)$user_id);
-    JFactory::getApplication()->enqueueMessage($query);
+ //   JFactory::getApplication()->enqueueMessage($query);
 
     
     $db->setQuery($query);

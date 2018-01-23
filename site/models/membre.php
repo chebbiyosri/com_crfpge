@@ -43,7 +43,7 @@ class CrfpgeModelsMembre extends CrfpgeModelsDefault
 	$query->select('i.designation as institution');
     $query->innerjoin('#__crfpge_institution as i ON i.institution_id = m.institution_id');
 
-    JFactory::getApplication()->enqueueMessage($query);
+   // JFactory::getApplication()->enqueueMessage($query);
 
     return $query;
   }

@@ -47,7 +47,7 @@ class CrfpgeModelsComite extends CrfpgeModelsDefault
 
     $query->select("p.*");
     $query->leftjoin("ws_user_profiles as p on p.user_id = u.id");
-    JFactory::getApplication()->enqueueMessage($query);
+   // JFactory::getApplication()->enqueueMessage($query);
 
     return $query;
 

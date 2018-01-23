@@ -47,7 +47,7 @@ class CrfpgeModelsAction extends CrfpgeModelsDefault
                     c.use_alerte, c.interval_alerte, c.date_alerte, c.state_code, c.created, c.created_by');
     $query->from('#__crfpge_action as c');
 
-    JFactory::getApplication()->enqueueMessage($query);
+//    JFactory::getApplication()->enqueueMessage($query);
 
     return $query;
   }
@@ -100,7 +100,7 @@ class CrfpgeModelsAction extends CrfpgeModelsDefault
 
 
     $query->where('c.state_code = ' . (int) $this->_state_code);
-    JFactory::getApplication()->enqueueMessage($query);
+//    JFactory::getApplication()->enqueueMessage($query);
     return $query;
   }
 
