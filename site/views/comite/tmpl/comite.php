@@ -24,9 +24,7 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="actionsTab">
-        <a href="#newActionModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
-		<?php echo JText::_('COM_CRFPGE_ADD_ACTION'); ?>
-		</a>
+
       <h2><?php echo JText::_('COM_CRFPGE_ACTION_LIST'); ?></h2>
       <?php echo $this->_actionListView->render(); ?>
     </div>
