@@ -7,7 +7,7 @@
 	<authorUrl></authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>1.1.0</version>
+	<version>1.5.0</version>
 	<description>COM_CRFPGE_DESCRIPTION</description>
 
 	<install>
@@ -40,24 +40,30 @@
 	</languages>
 
 	<administration>
-		<menu link="option=com_crfpge" img="components/com_crfpge/assets/images/crfpge_icon.png">COM_CRFPGE</menu>
-		<submenu>
-			<menu view="statistics" img="components/com_crfpge/assets/images/settings_icon.png" 
-				alt="CRFPGE/Statistics">COM_CRFPGE_SETTINGS</menu>
-		</submenu>
+            <menu link="option=com_crfpge" img="components/com_crfpge/assets/images/crfpge_icon.png">COM_CRFPGE</menu>
+            <submenu>
+                <menu view="statistics" img="components/com_crfpge/assets/images/settings_icon.png" 
+                        alt="CRFPGE/Statistics">COM_CRFPGE_SETTINGS</menu>
+                <menu view="comite" img="components/com_crfpge/assets/images/comite_icon.png" 
+                        alt="CRFPGE/comite">COM_CRFPGE_COMITE_LIST</menu>
+                <menu view="action" img="components/com_crfpge/assets/images/action_icon.png" 
+                        alt="CRFPGE/action">COM_CRFPGE_ACTION_LIST</menu>   
+                <menu view="calendar" img="components/com_crfpge/assets/images/calendar_icon.png" 
+                        alt="CRFPGE/calendar">Calendrier</menu>                                                
+            </submenu>
 
-		<files folder="admin">
-			<folder>controllers</folder>
-            <folder>helpers</folder>
-			<folder>languages</folder>
-			<folder>models</folder>
-			<folder>views</folder>
-            <folder>sql</folder>
-            <filename>access.xml</filename>
-            <filename>config.xml</filename>
-			<filename>crfpge.php</filename>
-			<filename>index.html</filename>
-		</files>  
+            <files folder="admin">
+		<folder>controllers</folder>
+                <folder>helpers</folder>
+		<folder>languages</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+                <folder>sql</folder>
+                <filename>access.xml</filename>
+                <filename>config.xml</filename>
+		<filename>crfpge.php</filename>
+		<filename>index.html</filename>
+            </files>  
 
 		<languages folder="admin">
 			<language tag="fr-FR">languages/fr-FR/fr-FR.com_crfpge.ini</language>
