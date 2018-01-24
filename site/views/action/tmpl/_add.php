@@ -9,7 +9,7 @@
 	  <input type="hidden" name="table" value="Action" />
 	  <input type="hidden" name="created_by" value="<?php echo JFactory::getUser()->id; ?>" />
       <input type="hidden" name="created" value="<?php echo JDate::getInstance(); ?>" />
-	  <input type="hidden" name="comite_id" value="<?php echo JFactory::getApplication()->input->get('comite_id',null); ?>" />
+	  <input type="hidden" name="comite_id" value="<?php echo (JFactory::getApplication()->input->get('comite_id',null) == null ?  $this->_comiteUser : JFactory::getApplication()->input->get('comite_id',null) ) ; ?>" />
 	  <input type="hidden" name="state_code" value="1" />
 	  <input type="text" class="span-12"  name="designation" placeholder="<?php echo JText::_('COM_CRFPGE_DESIGNATION'); ?>" />
 	  <textarea class="span-12" name="description" placeholder="<?php echo JText::_('COM_CRFPGE_DESCRIPTION'); ?>" name="summary" rows="3"></textarea>
