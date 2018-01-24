@@ -27,7 +27,7 @@
 <ul class="nav nav-tabs" id="myTab">
     <li class="active"><a href="#activitesTab" data-toggle="tab"><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></a></li>
     <li><a href="#membresTab" data-toggle="tab">Membres</a></li>
-	<li><a href="#documentsTab" data-toggle="tab">Documents</a></li>
+		<!--<li><a href="#documentsTab" data-toggle="tab">Documents</a></li>-->
 </ul>
 
 <div class="tab-content">
@@ -38,7 +38,7 @@
         <h2><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></h2>
         <?php echo $this->_activiteListView->render(); ?>
     </div>
-
+ 
     <div class="tab-pane" id="membresTab">
 	 <a href="#newMembreModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
 		Ajouter un membre
@@ -46,6 +46,7 @@
         <h2>Liste des membres</h2>
         <?php echo $this->_membreListView->render(); ?>
     </div>
+
 	<div class="tab-pane" id="documentsTab">
 	 <a href="#newDocumentModal" role="button" data-toggle="modal" class="btn pull-right"><i class="icon icon-pencil"></i> 
 		Ajouter un document
@@ -53,6 +54,7 @@
         <h2>Liste des documents</h2>
         <?php echo $this->_documentListView->render(); ?>
     </div>
+
 </div>
 </div>
 </div>
