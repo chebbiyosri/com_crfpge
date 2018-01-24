@@ -51,7 +51,7 @@ class CrfpgeModelsActivite extends CrfpgeModelsDefault
 
     //$query->select('u.email');
     //$query->leftjoin('#__users as u on u.id = aac.user_id');
-     JFactory::getApplication()->enqueueMessage($query);
+    // JFactory::getApplication()->enqueueMessage($query);
     return $query;
   }
 
