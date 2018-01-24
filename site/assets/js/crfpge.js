@@ -211,9 +211,9 @@ function loadActionEditModal(data)
 	jQuery("#description").val(action.description);
 	jQuery("#date_debut").val(action.date_debut);
 	jQuery("#date_fin").val(action.date_fin);
-	jQuery("#use_alerte").val(action.date_fin);
-	jQuery("#interval_alerte").val(action.interval_alerte);
-	jQuery("#date_alerte").val(action.date_alerte);
+	//jQuery("#use_alerte").val(action.date_fin);
+	//jQuery("#interval_alerte").val(action.interval_alerte);
+	//jQuery("#date_alerte").val(action.date_alerte);
 }
 
 function editActivite()

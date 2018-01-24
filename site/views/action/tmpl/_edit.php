@@ -16,12 +16,8 @@
 	  <textarea class="span-12" id="description" name="description"  placeholder="<?php echo JText::_('COM_CRFPGE_DESCRIPTION'); ?>" rows="3"></textarea>
 	  <input type="date" id="date_debut" name="date_debut" class="span-6" placeholder="<?php echo JText::_('COM_CRFPGE_DATE_DEBUT'); ?>" />
       <input type="date" id="date_fin" name="date_fin" class="span-6"  placeholder="<?php echo JText::_('COM_CRFPGE_DATE_FIN'); ?>" />
-	  <div class="checkbox">
-      <label>
-      <input type="checkbox" id="use_alerte" name="use_alerte" value=""><?php echo JText::_('COM_CRFPGE_ACTION_USE_ALERTE'); ?></label>
-      </div>
-      <input type="text" id="interval_alerte" name="interval_alerte" class="span-12"  placeholder="<?php echo JText::_('COM_CRFPGE_ACTION_INTERVAL_ALERTE'); ?>" />
-	  <input type="date" id="date_alerte" name="date_alerte" class="span-12"  placeholder="<?php echo JText::_('COM_CRFPGE_ACTION_DATE_ALERTE'); ?>" />
+
+
 	 </form>
 	</div>
   </div>
