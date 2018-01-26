@@ -47,11 +47,35 @@ class CrfpgeModelsDefault extends JModelBase
     {
         return false;
     }
+	if($data['table'] === 'Action')
+	{
+       if(!$this->storeEvent($row))
+	   {
+		return false;
+	   }
+	}
 
     return $row;
 
   }
- 
+   public function storeEvent($data)
+  {    
+    // Create and populate an object.
+    $event = new stdClass();
+    $event->id = null;
+    $event->title= $data->designation;
+    $event->alias= $data->designation;
+    $event->created= $data->created;
+	$event->created_by= $data->created_by;
+	$event->startdate= $data->date_debut;
+	$event->enddate= $data->date_fin;
+
+   // Insert the object into the user event table.
+    $result = JFactory::getDbo()->insertObject('#__icagenda_events', $event,'primary_key');
+	
+	return $result;
+
+  }
   /**
   * Modifies a property of the object, creating it if it does not already exist.
   *
