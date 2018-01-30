@@ -25,6 +25,7 @@ class CrfpgeViewsMembreHtml extends JViewHtml
 		
 		$this->_editMembreView = CrfpgeHelpersView::load('Membre','_edit','phtml');
 		$this->_editMembreView->institutions = $institutionModel->listItems();
+		
 
       break;
     }

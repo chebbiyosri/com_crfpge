@@ -24,9 +24,6 @@ class CrfpgeViewsComiteHtml extends JViewHtml
 		$this->pagination = $model->get('Pagination');
 	    $this->_comiteListView = CrfpgeHelpersView::load('Comite','_entry','phtml');
 		$this->_addComiteView = CrfpgeHelpersView::load('Comite','_add','phtml');
-		
-		
-		
 		$this->_editComiteView = CrfpgeHelpersView::load('Comite','_edit','phtml');
 
       break;

@@ -17,7 +17,6 @@
 		} ?>
 	</tbody>
 </table>
-<?php echo $this->pagination ?>
 <?php echo $this->_addComiteView->render(); ?>
 <?php echo $this->_editComiteView->render(); ?>
 

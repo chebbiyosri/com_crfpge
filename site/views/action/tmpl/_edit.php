@@ -7,7 +7,8 @@
 	<div class="row-fluid">
       <form id="actionEditForm">
       <input type="hidden" name="table" value="Action" />
-	  <input type="hidden" id="comite_id" name="action_id"/>
+	  <input type="hidden" name="model" value="Action" />
+	  <input type="hidden" id="action_id" name="action_id"/>
 	  <input type="hidden" id="comite_id" name="comite_id"/>
 	  <input type="hidden" id="created_by" name="created_by"/>
       <input type="hidden" id="created" name="created"/>
@@ -23,6 +24,6 @@
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo JText::_('COM_CRFPGE_CLOSE'); ?></button>
-    <button class="btn btn-primary" onclick="editComite();"><?php echo JText::_('COM_CRFPGE_EDIT'); ?></button>
+    <button class="btn btn-primary" onclick="editAction();"><?php echo JText::_('COM_CRFPGE_EDIT'); ?></button>
   </div>
 </div>

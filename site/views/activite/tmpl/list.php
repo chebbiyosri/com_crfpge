@@ -16,3 +16,13 @@
 </table>
 
 <?php echo $this->_addActiviteView->render(); ?>
+
+<script>
+function loadEditModal(id){
+	var jsonArray = <?php echo json_encode($this->activites); ?>;
+	if(id){
+	var result = jQuery.grep(jsonArray, function(e){ return e.activite_id == parseInt(id); });
+    loadActiviteEditModal(result[0]);
+	}
+}
+</script>

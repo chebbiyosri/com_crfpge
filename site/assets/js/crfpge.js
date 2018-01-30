@@ -199,21 +199,25 @@ function editAction()
 }
 function loadActionEditModal(data)
 {
-	var action = JSON.parse(data);
+	if(data){
 	jQuery("#editActionModal").modal('show');
 
-	jQuery("#action_id").val(action.action_id);
-	jQuery("#comite_id").val(action.comite_id);
-	jQuery("#created_by").val(action.created_by);
-	jQuery("#created").val(action.created);
-	jQuery("#state_code").val(action.state_code);
-	jQuery("#designation").val(action.designation);
-	jQuery("#description").val(action.description);
-	jQuery("#date_debut").val(action.date_debut);
-	jQuery("#date_fin").val(action.date_fin);
+	jQuery("#action_id").val(data.action_id);
+	jQuery("#comite_id").val(data.comite_id);
+	jQuery("#created_by").val(data.created_by);
+	jQuery("#created").val(data.created);
+	jQuery("#state_code").val(data.state_code);
+	jQuery("#designation").val(data.designation);
+	jQuery("#description").val(data.description);
+	jQuery("#date_debut").val(data.date_debut);
+	jQuery("#date_fin").val(data.date_fin);
 	//jQuery("#use_alerte").val(action.date_fin);
 	//jQuery("#interval_alerte").val(action.interval_alerte);
 	//jQuery("#date_alerte").val(action.date_alerte);
+	}
+	else{
+		return false;
+	}
 }
 
 function editActivite()
@@ -244,16 +248,19 @@ function editActivite()
 }
 function loadActiviteEditModal(data)
 {
-	var activite = JSON.parse(data);
+	if(data){
 	jQuery("#editActiviteModal").modal('show');
-	
-    jQuery("#activite_id").val(activite.activite_id);
-	jQuery("#action_id").val(activite.action_id);
-	jQuery("#created_by").val(activite.created_by);
-	jQuery("#created").val(activite.created);
-	jQuery("#state_code").val(activite.state_code);
-	jQuery("#designation").val(activite.designation);
-	jQuery("#description").val(activite.description);
+    jQuery("#edit_activite_id").val(data.activite_id);
+	jQuery("#edit_action_id").val(data.action_id);
+	jQuery("#edit_created_by").val(data.created_by);
+	jQuery("#edit_created").val(data.created);
+	jQuery("#edit_state_code").val(data.state_code);
+	jQuery("#edit_designation").val(data.designation);
+	jQuery("#edit_description").val(data.description);
+	}
+	else{
+		return false;
+	}	
 }
 
 
@@ -428,19 +435,22 @@ function loadMembreEditModal(data)
 {
 	if(data){
 	jQuery("#editMembreModal").modal('show');
-    jQuery("#membre_id").val(data.membre_id);
-	jQuery("#action_id").val(data.action_id);
-	jQuery("#institution_id").val(data.institution_id);
+
+	document.getElementById("institutionDropdown").value= data.institution_id;
 	
-	jQuery("#representant").val(data.representant);
-	jQuery("#fonction").val(data.fonction);
-	jQuery("#email").val(data.email);
-	jQuery("#tel").val(data.tel);
+    jQuery("#edit_membre_id").val(data.membre_id);
+	jQuery("#edit_action_id").val(data.action_id);
+	jQuery("#edit_institution_id").val(data.institution_id);
 	
-	jQuery("#created_by").val(data.created_by);
-	jQuery("#created").val(data.created);
-	jQuery("#state_code").val(data.state_code);
-	jQuery("#designation").val(data.designation);
+	jQuery("#edit_representant").val(data.representant);
+	jQuery("#edit_fonction").val(data.fonction);
+	jQuery("#edit_email").val(data.email);
+	jQuery("#edit_tel").val(data.tel);
+	
+	jQuery("#edit_created_by").val(data.created_by);
+	jQuery("#edit_created").val(data.created);
+	jQuery("#edit_state_code").val(data.state_code);
+	
 	}
 	else{
 		return false;

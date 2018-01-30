@@ -20,6 +20,7 @@
 
 
 <?php echo $this->_addActionView->render(); ?>
+<?php echo $this->_editActionView->render(); ?>
 <script>
 function loadEditModal(id){
 	var jsonArray = <?php echo json_encode($this->actions); ?>;

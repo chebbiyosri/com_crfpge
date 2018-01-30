@@ -4,7 +4,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
 
 //Display partial views
-class CrfpgeViewsActivitewHtml extends JViewHTML
+class CrfpgeViewsActiviteHtml extends JViewHTML
 {
 
     function render()
@@ -13,7 +13,7 @@ class CrfpgeViewsActivitewHtml extends JViewHTML
 	$layout = $app->input->get('layout');
 	$model = new CrfpgeModelsActivite();
 	switch($layout) {
-      case "detail":
+      case "activite":
         $this->activite = $model->getItem();   
         
       break;

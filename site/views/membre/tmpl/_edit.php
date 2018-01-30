@@ -5,27 +5,23 @@
   </div>
   <div class="modal-body">
 	<div class="row-fluid">
-      <form id="MembreEditForm">
+      <form id="membreEditForm">
       <input type="hidden" name="table" value="Membre" />
-	  <input type="hidden" id="membre_id" name="membre_id"/>
-	  <input type="hidden" id="action_id" name="action_id"/>
-	  <input type="hidden" id="institution_id" name="institution_id"/>
-	  <input type="hidden" id="created_by" name="created_by"/>
-      <input type="hidden" id="created" name="created"/>
-	  <input type="hidden" id="state_code" name="state_code"/>
-	  <select name="institution">
+	  <input type="hidden" id="edit_membre_id" name="membre_id"/>
+	  <input type="hidden" id="edit_action_id" name="action_id"/>
+	  <input type="hidden" id="edit_institution_id" name="edit_institution_id"/>
+	  <input type="hidden" id="edit_created_by" name="created_by"/>
+      <input type="hidden" id="edit_created" name="created"/>
+	  <input type="hidden" id="edit_state_code" name="state_code"/>
+	  <select id ="institutionDropdown" name="institution_id">
          <?php foreach($this->institutions as $i=>$dataItem): ?>
-	         <?php if($dataItem->institution_id = 1) { ?>
-		        <option selected="selected" value="<?php echo $dataItem->institution_id?>"> <?php echo $dataItem->designation?> </option>
-		     <?php  } else {?>
                 <option value="<?php echo $dataItem->institution_id?>"><?php echo $dataItem->designation?></option>
-		     <?php } ?>
       <?php endforeach; ?>
       </select>
-	  <input type="text" class="span-12"  id="representant"  name="representant" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_REPRESENTANT'); ?>" />
-	  <input type="text" class="span-12"  id="fonction" name="fonction" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_FONCTION'); ?>" />
-	  <input type="text" class="span-12"  id="email" name="email" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_EMAIL'); ?>" />
-	  <input type="text" class="span-12"  id="tel" name="tel" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_TEL'); ?>" />
+	  <input type="text" class="span-12"  id="edit_representant"  name="representant" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_REPRESENTANT'); ?>" />
+	  <input type="text" class="span-12"  id="edit_fonction" name="fonction" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_FONCTION'); ?>" />
+	  <input type="text" class="span-12"  id="edit_email" name="email" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_EMAIL'); ?>" />
+	  <input type="text" class="span-12"  id="edit_tel" name="tel" placeholder="<?php echo JText::_('COM_CRFPGE_MEMBRE_TEL'); ?>" />
 
 	 </form>
 	</div>
@@ -35,3 +31,4 @@
     <button class="btn btn-primary" onclick="editMembre();"><?php echo JText::_('COM_CRFPGE_EDIT'); ?></button>
   </div>
 </div>
+

@@ -14,10 +14,10 @@
       <dd><?php echo $this->membre->fonction?></dd>
 	  
       <dt><?php echo JText::_('COM_CRFPGE_MEMBRE_EMAIL'); ?></dt>
-      <dd><?php echo JHtml::_('date', $this->membre->email); ?></dd>
+      <dd><?php echo $this->membre->email; ?></dd>
 	  
 	  <dt><?php echo JText::_('COM_CRFPGE_MEMBRE_TEL'); ?></dt>
-      <dd><?php echo JHtml::_('date', $this->membre->tel); ?></dd>
+      <dd><?php echo $this->membre->tel; ?></dd>
     </dl>
   </div>
 </div>

@@ -20,6 +20,8 @@ class CrfpgeViewsActionHtml extends JViewHtml
 		$this->_membreListView = CrfpgeHelpersView::load('Membre','list','phtml');
 		$this->_membreListView->membres = $this->action->membres;
 		
+		$this->_editActiviteView = CrfpgeHelpersView::load('Activite','_edit','phtml');
+		$this->_editMembreView = CrfpgeHelpersView::load('Membre','_edit','phtml');
 		
       break;
       case "list":
@@ -27,6 +29,7 @@ class CrfpgeViewsActionHtml extends JViewHtml
         $this->actions = $model->listItems();
 	    $this->_actionEntryView = CrfpgeHelpersView::load('Action','_entry','phtml');
 		$this->_addActionView = CrfpgeHelpersView::load('Action','_add','phtml');	
+		$this->_editActionView = CrfpgeHelpersView::load('Action','_edit','phtml');
       break;
     }
     //display

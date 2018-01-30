@@ -27,7 +27,7 @@
 <ul class="nav nav-tabs" id="myTab">
     <li class="active"><a href="#activitesTab" data-toggle="tab"><?php echo JText::_('COM_CRFPGE_ACTIVITE_LIST'); ?></a></li>
     <li><a href="#membresTab" data-toggle="tab">Membres</a></li>
-		<!--<li><a href="#documentsTab" data-toggle="tab">Documents</a></li>-->
+	<!--<li><a href="#documentsTab" data-toggle="tab">Documents</a></li>-->
 </ul>
 
 <div class="tab-content">
@@ -58,3 +58,5 @@
 </div>
 </div>
 </div>
+<?php echo $this->_editActiviteView->render(); ?>
+<?php echo $this->_editMembreView->render(); ?>
