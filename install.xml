@@ -7,12 +7,12 @@
 	<authorUrl></authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>3.0.0</version>
+	<version>3.1.0</version>
 	<description>COM_CRFPGE_DESCRIPTION</description>
 
 	<install>
        <sql>
-    	<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+            <file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
        </sql>
 	</install>
         <uninstall>
@@ -44,12 +44,7 @@
             <submenu>
                 <menu view="statistics" img="components/com_crfpge/assets/images/settings_icon.png" 
                         alt="CRFPGE/Statistics">COM_CRFPGE_SETTINGS</menu>
-                <menu view="comite" img="components/com_crfpge/assets/images/comite_icon.png" 
-                        alt="CRFPGE/comite">COM_CRFPGE_COMITE_LIST</menu>
-                <menu view="action" img="components/com_crfpge/assets/images/action_icon.png" 
-                        alt="CRFPGE/action">COM_CRFPGE_ACTION_LIST</menu>   
-                <menu view="calendar" img="components/com_crfpge/assets/images/calendar_icon.png" 
-                        alt="CRFPGE/calendar">Calendrier</menu>                                                
+                                                                
             </submenu>
 
             <files folder="admin">
